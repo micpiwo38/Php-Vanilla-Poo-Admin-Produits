@@ -1,16 +1,16 @@
 <?php
-if($_SESSION["is_admin"]){
-    ?>
+if ($_SESSION["is_admin"]) {
+?>
     <div class="container shadow rounded p-3 mt-3">
         <h1 class="text-success">ADMINISTRATEUR :
             <?= $_SESSION["email"] ?>
         </h1>
         <?php
         //var_dump($_SESSION["role"]);
-        if($_SESSION["role"] === "1"){
-            ?>
+        if ($_SESSION["role"] === "1") {
+        ?>
             <h3>Rôle : Administrateur</h3>
-            <?php
+        <?php
         }
         ?>
         <div class="row">
@@ -32,11 +32,12 @@ if($_SESSION["is_admin"]){
             </div>
             <div class="col-md-9 col-sm-12">
                 <div>ADMINISTRATION</div>
+                <a href="ajouter-produit" class="btn btn-success mt-3">Ajouter un produit</a>
             </div>
         </div>
     </div>
 
-    <?php
-}else{
+<?php
+} else {
     header("Location: connexion");
 }
